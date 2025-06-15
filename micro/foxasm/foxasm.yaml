@@ -1,0 +1,16 @@
+filetype: foxasm
+
+detect:
+    filename: "\\.fa$"
+
+rules:
+    - statement: "\\b(pl|mv|st|ld|j(m|s|c)|a(\\+|-|!|i|d|\\*|/|&|\\||\\^|l|r)|gt|lt|ge|le|eq|ne|cl|rt|fi)(\\s|$)"
+
+    - constant.boolean: "\\b(mem|inp|out|cst)\\b"
+    - identifier: "\\b(mch|mar|mdr|acc|dat|cea|csp|gp[0-7])\\b"
+
+    - constant.string: "\\[[^\\]]*\\]s"
+    - constant.number: "\\[[\\da-fA-F']*\\](b|x|o|d)"
+
+    - comment: ";.*$"
+
